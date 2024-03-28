@@ -17,7 +17,7 @@ function [T_total_over_T, P_total_over_P, MFP] = MASSFP(T_total, f, M)
         if abs(V_error) < 0.00001 % Hata toleransının kontrolü
             T_total_over_T = T_total / T; % T_oranının hesaplanması
             P_total_over_P = Pr_total / Pr; % P_oranının hesaplanması
-            MFP = M * sqrt(gama * g * T_total / (T * R)); % MFP'nin hesaplanması
+            MFP = M * sqrt(gama * 1 * T_total / (T * R))/P_total_over_P; % MFP'nin hesaplanması
             % Çıktıların yazdırılması
             %disp(['T_total_over_T: ', num2str(T_total_over_T)]);
             %disp(['P_total_over_P: ', num2str(P_total_over_P)]);
