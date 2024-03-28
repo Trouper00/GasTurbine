@@ -15,24 +15,18 @@ function [Fovermdot, S, f0, eta_P, eta_TH, rateofV9toa0, rateofV19toa0, Pt9overP
     elseif M_0 > 1 && M_0 < 5
         eta_r = 1 - 0.075 * (M_0 - 1)^(1.35);
     end
-    fprintf('cp_0: %.4f\nR_0: %.4f\ngamma_0: %.4f\na_0: %.4f\nh_0: %.4f\nPr_0: %.4f\nV_0: %.4f\nht0: %.4f\ncp_total0: %.4f\nR_total0: %.4f\ngamma_total0: %.4f\na_total0: %.4f\nT_total0: %.4f\nPr_total0: %.4f\ntau_r: %.4f\npi_r: %.4f\neta_r: %.4f\n', cp_0, R_0, gama_0, a_0, h_0, Pr_0, V_0, ht0, cp_total0, R_total0, gama_total0, a_total0, T_total0, Pr_total0, tau_r, pi_r, eta_r);
-
                          %diffuser
     f=0;
     pi_d=pi_dmax*eta_r;
     h_t2=ht0;
     Pr_t2=Pr_total0;
-    fprintf('Diffuser:\n   f = %.4f\n   pi_d = %.4f\n   h_t2 = %.2f kJ/kg\n   Pr_t2 = %.2f\n', f, pi_d, h_t2, Pr_t2);
-                     %fan exit
+                        %fan exit
     Pr_t13=Pr_t2*(pi_f)^(1/e_f);
     [cp_t13, R_t13, gama_t13 , a_t13,T_t13,h_t13] = FAIR_3(f, Pr_t13);
     tau_f=h_t13/h_t2;
     Pr_t13i=Pr_t2*pi_f;
     [cp_t13i, R_t13i, gama_t13i, a_t13i,T_t13i,h_t13i] = FAIR_3(f, Pr_t13i);
     eta_f=(h_t13i-h_t2)/(h_t13-h_t2);
-    fprintf('Fan Exit:\n   Pr_t13 = %.2f\n   cp_t13 = %.2f kJ/kg-K\n   R_t13 = %.2f kJ/kg-K\n   gama_t13 = %.2f\n   a_t13 = %.2f m/s\n   T_t13 = %.2f K\n   h_t13 = %.2f kJ/kg\n   tau_f = %.4f\n   Pr_t13i = %.2f\n   cp_t13i = %.2f kJ/kg-K\n   R_t13i = %.2f kJ/kg-K\n   gama_t13i = %.2f\n   a_t13i = %.2f m/s\n   T_t13i = %.2f K\n   h_t13i = %.2f kJ/kg\n   eta_f = %.4f\n', Pr_t13, cp_t13, R_t13, gama_t13, a_t13, T_t13, h_t13, tau_f, Pr_t13i, cp_t13i, R_t13i, gama_t13i, a_t13i, T_t13i, h_t13i, eta_f);
-
-
                 %low pressure compressor
     Pr_t2_5=Pr_t2*(pi_cL^(1/e_cL));
     [cp_t2_5, R_t2_5, gama_t2_5, a_t2_5,T_t2_5,h_t2_5] = FAIR_3(f, Pr_t2_5);
@@ -40,8 +34,6 @@ function [Fovermdot, S, f0, eta_P, eta_TH, rateofV9toa0, rateofV19toa0, Pt9overP
     Pr_t2_5i=Pr_t2*pi_cL;
     [cp_t2_5i, R_t2_5i, gama_t2_5i, a_t2_5i,T_t2_5i,h_t2_5i] = FAIR_3(f, Pr_t2_5i);
     eta_cL=(h_t2_5i-h_t2)/(h_t2_5-h_t2);
-    fprintf('Low Pressure Compressor:\n   Pr_t2_5 = %.2f\n   cp_t2_5 = %.2f kJ/kg-K\n   R_t2_5 = %.2f kJ/kg-K\n   gama_t2_5 = %.2f\n   a_t2_5 = %.2f m/s\n   T_t2_5 = %.2f K\n   h_t2_5 = %.2f kJ/kg\n   tau_cL = %.4f\n   Pr_t2_5i = %.2f\n   cp_t2_5i = %.2f kJ/kg-K\n   R_t2_5i = %.2f kJ/kg-K\n   gama_t2_5i = %.2f\n   a_t2_5i = %.2f m/s\n   T_t2_5i = %.2f K\n   h_t2_5i = %.2f kJ/kg\n   eta_cL = %.4f\n', Pr_t2_5, cp_t2_5, R_t2_5, gama_t2_5, a_t2_5, T_t2_5, h_t2_5, tau_cL, Pr_t2_5i, cp_t2_5i, R_t2_5i, gama_t2_5i, a_t2_5i, T_t2_5i, h_t2_5i, eta_cL);
-
              %high pressure compressor
     Pr_t3=Pr_t2_5*(pi_cH^(1/e_cH));
     [cp_t3, R_t3, gama_t3, a_t3,T_t3,h_t3] = FAIR_3(f, Pr_t3);
@@ -49,9 +41,7 @@ function [Fovermdot, S, f0, eta_P, eta_TH, rateofV9toa0, rateofV19toa0, Pt9overP
     Pr_t3i=Pr_t2_5*pi_cH;
     [cp_t3i, R_t3i, gama_t3i, a_t3i,T_t3i,h_t3i] = FAIR_3(f, Pr_t3i);
     eta_cH=(h_t3i-h_t2_5)/(h_t3-h_t2_5);
-    fprintf('High Pressure Compressor:\n   Pr_t3 = %.2f\n   cp_t3 = %.2f kJ/kg-K\n   R_t3 = %.2f kJ/kg-K\n   gama_t3 = %.2f\n   a_t3 = %.2f m/s\n   T_t3 = %.2f K\n   h_t3 = %.2f kJ/kg\n   tau_cH = %.4f\n   Pr_t3i = %.2f\n   cp_t3i = %.2f kJ/kg-K\n   R_t3i = %.2f kJ/kg-K\n   gama_t3i = %.2f\n   a_t3i = %.2f m/s\n   T_t3i = %.2f K\n   h_t3i = %.2f kJ/kg\n   eta_cH = %.4f\n', Pr_t3, cp_t3, R_t3, gama_t3, a_t3, T_t3, h_t3, tau_cH, Pr_t3i, cp_t3i, R_t3i, gama_t3i, a_t3i, T_t3i, h_t3i, eta_cH);
-
-                %burner
+               %burner
     f4i=0.1;
     [cp_t4, R_t4, gama_t4 , a_t4,h_t4,Pr_t4] = FAIR_1(Tt4, f4i);
     f = (h_t4 - h_t3) / (eta_b * h_PR - h_t4);
@@ -60,20 +50,14 @@ function [Fovermdot, S, f0, eta_P, eta_TH, rateofV9toa0, rateofV19toa0, Pt9overP
         [cp_t4, R_t4, gama_t4 , a_t4,h_t4,Pr_t4] = FAIR_1(Tt4, f4i);
         f = (h_t4 - h_t3) / (eta_b * h_PR - h_t4);
     end
-    fprintf('Burner Exit:\n  Tt4=%.4f\n  cp_t4 = %.4f\n   R_t4 = %.4f\n   gama_t4 = %.4f\n   a_t4 = %.4f\n   h_t4 = %.4f\n   Pr_t4 = %.4f\n   f = %.4f\n f4i = %.4f\n', Tt4,cp_t4, R_t4, gama_t4, a_t4, h_t4, Pr_t4, f,f4i);
-    
     tau_lambda=h_t4/h_0;
                 %coolant mixer
     tau_m1=((1-beta-epsilon1-epsilon2)*(1+f)+(epsilon1*tau_r*tau_cL*tau_cH/tau_lambda))/((1-beta-epsilon1-epsilon2)*(1+f)+epsilon1);
-    fprintf('tau_lambda = %.4f\nCoolant Mixer:\n   tau_m1 = %.4f\n', tau_lambda, tau_m1);
-
                 % before high pressure turbine
     tau_tH = 1 - (tau_r * tau_cL * (tau_cH - 1) + (1 + alfa) * C_TOH / eta_mPH) / (eta_mH * tau_lambda * ((1 - beta - epsilon1 - epsilon2) * (1 + f) + (epsilon1 * tau_r * tau_cL * tau_cH / tau_lambda)));
     h_t4_1=h_t4*tau_m1;
     f_4_1=f/(1+f+epsilon1/(1-beta-epsilon1-epsilon1));
     [cp_t4_1, R_t4_1, gama_t4_1 , a_t4_1,T_t4_1,Pr_t4_1] = FAIR_2(f_4_1, h_t4_1);
-    fprintf(' before high pressure turbine \n tau_tH = %.4f\n  h_t4_1 = %.4f\n  f_4_1 = %.4f\n  cp_t4_1 = %.4f\n  R_t4_1 = %.4f\n  gama_t4_1 = %.4f\n  a_t4_1 = %.4f\n  T_t4_1 = %.4f\n  Pr_t4_1 = %.4f\n', tau_tH, h_t4_1, f_4_1, cp_t4_1, R_t4_1, gama_t4_1, a_t4_1, T_t4_1, Pr_t4_1);
-
                 %high pressure turbine
     h_t4_4=h_t4_1*tau_tH;
     [cp_t4_4, R_t4_4, gama_t4_4 , a_t4_4,T_t4_4,Pr_t4_4] = FAIR_2(f_4_1, h_t4_4);
@@ -81,16 +65,12 @@ function [Fovermdot, S, f0, eta_P, eta_TH, rateofV9toa0, rateofV19toa0, Pt9overP
     Pr_t4_4i=pi_tH*Pr_t4_1;
     [cp_t4_4i, R_t4_4i, gama_t4_4i , a_t4_4i,T_t4_4i,h_t4_4i] = FAIR_3(f_4_1, Pr_t4_4i);
     eta_tH=(h_t4_1-h_t4_4)/(h_t4_1-h_t4_4i);
-    fprintf(' High Pressure Turbine:\n h_t4_4 = %.4f\n  cp_t4_4 = %.4f\n   R_t4_4 = %.4f\n   gama_t4_4 = %.4f\n   a_t4_4 = %.4f\n   T_t4_4 = %.4f\n   Pr_t4_4 = %.4f\n   pi_tH = %.4f\n   Pr_t4_4i = %.4f\n   cp_t4_4i = %.4f\n   R_t4_4i = %.4f\n   gama_t4_4i = %.4f\n   a_t4_4i = %.4f\n   T_t4_4i = %.4f\n   h_t4_4i = %.4f\n   eta_tH = %.4f\n', h_t4_4, cp_t4_4, R_t4_4, gama_t4_4, a_t4_4, T_t4_4, Pr_t4_4, pi_tH, Pr_t4_4i, cp_t4_4i, R_t4_4i, gama_t4_4i, a_t4_4i, T_t4_4i, h_t4_4i, eta_tH);
-
                 %coolant mixer
     tau_m2=((1-beta-epsilon1-epsilon2)*(1+f)+epsilon1+(epsilon2*tau_r*tau_cL*tau_cH/(tau_lambda*tau_m1*tau_tH)))/((1-beta-epsilon1-epsilon2)*(1+f)+epsilon1+epsilon2);
     h_t4_5=h_t4_4*tau_m2;
     f_4_5=f/(1+f+(epsilon1+epsilon2)/(1-beta-epsilon1-epsilon1));
     [cp_t4_5, R_t4_5, gama_t4_5 , a_t4_5,T_t4_5,Pr_t4_5] = FAIR_2(f_4_5, h_t4_5);
-    fprintf('Coolant Mixer:\n  tau_m2 = %.4f\n  h_t4_5 = %.4f\n  f_4_5 = %.4f\n  cp_t4_5 = %.4f\n   R_t4_5 = %.4f\n   gama_t4_5 = %.4f\n   a_t4_5 = %.4f\n   T_t4_5 = %.4f\n   Pr_t4_5 = %.4f\n', tau_m2, h_t4_5, f_4_5, cp_t4_5, R_t4_5, gama_t4_5, a_t4_5, T_t4_5, Pr_t4_5);
-
-                %low pressure turbine
+             %low pressure turbine
     tau_tL = 1 - (tau_r *( (tau_cL - 1) + alfa * (tau_f - 1)) + (1 + alfa) * C_TOL / eta_mPL) / (eta_mH * (tau_lambda * tau_tH) * ((1 - beta - epsilon1 - epsilon2) * (1 + f) + (epsilon1 + epsilon2 / tau_tH) * tau_r * tau_cL * tau_cH / tau_lambda));
     h_t5=h_t4_5*tau_tL;
     [cp_t5, R_t5, gama_t5 , a_t5,T_t5,Pr_t5] = FAIR_2(f_4_5, h_t5);
@@ -98,11 +78,6 @@ function [Fovermdot, S, f0, eta_P, eta_TH, rateofV9toa0, rateofV19toa0, Pt9overP
     Pr_t5i=pi_tL*Pr_t4_5;
     [cp_t5i, R_t5i, gama_t5i , a_t5i,T_t5i,h_t5i] = FAIR_3(f_4_5, Pr_t5i);
     eta_tL=(h_t4_5-h_t5)/(h_t4_5-h_t5i);
-    fprintf('Low Pressure Turbine:\n');
-    fprintf('  tau_tL = %.4f\n  h_t5 = %.4f\n  cp_t5 = %.4f\n   R_t5 = %.4f\n   gama_t5 = %.4f\n   a_t5 = %.4f\n   T_t5 = %.4f\n   Pr_t5 = %.4f\n', tau_tL, h_t5, cp_t5, R_t5, gama_t5, a_t5, T_t5, Pr_t5);
-    fprintf('  pi_tL = %.4f\n  Pr_t5i = %.4f\n  cp_t5i = %.4f\n   R_t5i = %.4f\n   gama_t5i = %.4f\n   a_t5i = %.4f\n   T_t5i = %.4f\n   h_t5i = %.4f\n', pi_tL, Pr_t5i, cp_t5i, R_t5i, gama_t5i, a_t5i, T_t5i, h_t5i);
-    fprintf('  eta_tL = %.4f\n\n', eta_tL);
-                %%asd
     ht_9=h_t5;
     T_t9=T_t5;
     Pr_t9=Pr_t5;
