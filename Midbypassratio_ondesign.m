@@ -34,7 +34,7 @@ Tt4 = 1779; %hp turbine inlet temp(K)
 % Sonuçları yazdır
 fprintf('Specific Thrust (F/m_dot0): %.4f N/(kg/s)\n', Fovermdot);
 fprintf('Specific Fuel Consumption (S): %.4f (kg/hr)/N \n', S);
-fprintf('Air-fuel ratio (f0): %.4f\n', f0);
+fprintf(' Overall fuel-to air ratio (f0): %.4f\n', f0);
 fprintf('Propulsive efficiency (eta_P): %.4f\n', eta_P);
 fprintf('ETA_TH: %.4f\n', eta_TH);
 fprintf('Rate of V9 to a0: %.4f\n', rateofV9toa0);
@@ -53,7 +53,7 @@ fprintf('Tau_cH: %.4f\n', tau_cH);
 fprintf('Tau_tH: %.4f\n', tau_tH);
 fprintf('Tau_tL: %.4f\n', tau_tL);
 fprintf('Tau_lambda: %.4f\n', tau_lambda);
-fprintf('f: %.4f\n', f);
+fprintf('Combustor fuel to air ratio: %.4f\n', f);
 fprintf('Eta_f: %.4f\n', eta_f);
 fprintf('Eta_cL: %.4f\n', eta_cL);
 fprintf('Eta_cH: %.4f\n', eta_cH);
