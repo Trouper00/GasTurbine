@@ -1,9 +1,11 @@
 # GasTurbine
 ![image](https://github.com/Trouper00/GasTurbine/assets/165286766/2ed22e36-f079-422f-987c-40b092663691)
 
+![image](https://github.com/Trouper00/GasTurbine/assets/165286766/209187e1-b3a5-4dca-b626-dcada23fd955)
 
 
-Bu MATLAB fonksiyonlar grubu high bypass gaz türbinlerinin on-design koşulları için geliştirilmiştir. Kodların büyük kısmı Jack D. Mattingly'nin Aircraft Engine Design 2nd Edition kitabından alınmıştır. Ayrıyeten Selçuk Can Uysal'ın HIGH BY-PASS RATIO TURBOFAN ENGINES AEROTHERMODYNAMIC 
+Yukarıdaki resimler 
+Bu MATLAB fonksiyonlar grubu high bypass gaz türbinlerinin on-design koşulları için geliştirilmiştir. Kodların büyük kısmı ve yukarıdaki iki ekran görüntüsü Jack D. Mattingly'nin Aircraft Engine Design 2nd Edition kitabından alınmıştır. Ayrıyeten Selçuk Can Uysal'ın HIGH BY-PASS RATIO TURBOFAN ENGINES AEROTHERMODYNAMIC 
 DESIGN AND OPTIMIZATION tezinden de oldukça fazla kez yararlanılmıştır.
 
 -> FAIR_1, girilen T ve f değerlerine göre hava-yakıt karışımının  cp, R, gama , a,h,Pr değerlerini buldurur.
