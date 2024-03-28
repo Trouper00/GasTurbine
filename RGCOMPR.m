@@ -3,14 +3,6 @@
             case 1
                 M = varargin{1};
                 [T_total_over_T, P_total_over_P, MFP] = MASSFP(Tt, f, M);
-                            % Çıktıları ekrana yazdır
-                disp('T_total_over_T:');
-                disp(T_total_over_T);
-                disp('P_total_over_P:');
-                disp(P_total_over_P);
-                disp('MFP:');
-                disp(MFP);
-    
             case 2
                 Tt_over_T_known = varargin;
                 [cp_total, R_total, gama_total, a_total, h_total, Pr_total] = FAIR_1(Tt,f);
@@ -24,13 +16,7 @@
                     M = sqrt(V2) / a;
                 end
                 [T_total_over_T, P_total_over_P, MFP] = MASSFP(Tt, f, M);            
-                % Çıktıları ekrana yazdır
-                disp('T_total_over_T:');
-                disp(T_total_over_T);
-                disp('P_total_over_P:');
-                disp(P_total_over_P);
-                disp('MFP:');
-                disp(MFP);
+
             case 3
                 Pt_over_P_known = varargin;
                 [cp_total, R_total, gama_total, a_total, h_total, Pr_total] = FAIR_1(Tt,f);
@@ -44,12 +30,5 @@
                     M = sqrt(V2) / a;
                 end
                 [T_total_over_T, P_total_over_P, MFP] = MASSFP(Tt, f, M);            
-                % Çıktıları ekrana yazdır
-                disp('T_total_over_T:');
-                disp(T_total_over_T);
-                disp('P_total_over_P:');
-                disp(P_total_over_P);
-                disp('MFP:');
-                disp(MFP);
         end
     end
