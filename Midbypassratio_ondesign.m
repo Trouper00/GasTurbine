@@ -32,7 +32,7 @@ Tt4 = 1779; %hp turbine inlet temp(K)
 [Fovermdot, S, f0, eta_P, eta_TH, rateofV9toa0, rateofV19toa0, Pt9overP9, Pt19overP19, P19overP0, P9overP0, T9overT0, T19overT0, pi_tH, pi_tL, tau_f, tau_cL, tau_cH, tau_tH, tau_tL, tau_lambda, f, eta_f, eta_cL, eta_cH, eta_tH, eta_tL, M_9, M_19] = highbypass(M_0, T_0, P_0, beta, C_TOL, C_TOH, h_PR, epsilon1, epsilon2, pi_b, pi_dmax, pi_n, pi_nf, e_f, e_cL, e_cH, e_tH, e_tL, eta_b, eta_mL, eta_mH, eta_mPL, eta_mPH, pi_f, pi_cL, pi_cH, alfa, Tt4);
 
 % Sonuçları yazdır
-fprintf('Fuel flow rate (F/m_dot): %.4f N*kg/s\n', Fovermdot);
+fprintf('Specific Thrust (F/m_dot0): %.4f N/(kg/s)\n', Fovermdot);
 fprintf('Specific Fuel Consumption (S): %.4f (kg/hr)/N \n', S);
 fprintf('Air-fuel ratio (f0): %.4f\n', f0);
 fprintf('Propulsive efficiency (eta_P): %.4f\n', eta_P);
