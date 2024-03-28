@@ -1,4 +1,4 @@
-# GasTurbine
+# High bypass GasTurbine Off design calculation
 ![image](https://github.com/Trouper00/GasTurbine/assets/165286766/c5c98c64-5e8f-4cb0-9d23-89c70a5b1022)
 
 ![image](https://github.com/Trouper00/GasTurbine/assets/165286766/4c748879-b811-4260-8de1-e48790c64070)
