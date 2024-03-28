@@ -1,4 +1,8 @@
 # GasTurbine
+![image](https://github.com/Trouper00/GasTurbine/assets/165286766/2ed22e36-f079-422f-987c-40b092663691)
+
+
+
 Bu MATLAB fonksiyonlar grubu high bypass gaz türbinlerinin on-design koşulları için geliştirilmiştir. Kodların büyük kısmı Jack D. Mattingly'nin Aircraft Engine Design 2nd Edition kitabından alınmıştır. Ayrıyeten Selçuk Can Uysal'ın HIGH BY-PASS RATIO TURBOFAN ENGINES AEROTHERMODYNAMIC 
 DESIGN AND OPTIMIZATION tezinden de oldukça fazla kez yararlanılmıştır.
 
