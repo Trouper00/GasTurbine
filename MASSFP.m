@@ -19,11 +19,7 @@ function [T_total_over_T, P_total_over_P, MFP] = MASSFP(T_total, f, M)
             P_total_over_P = Pr_total / Pr; % P_oranının hesaplanması
           
             MFP = M * sqrt(gama * 1 * T_total / (T * R))/P_total_over_P; % MFP'nin hesaplanması
-            % Çıktıların yazdırılması
-            %disp(['T_total_over_T: ', num2str(T_total_over_T)]);
-            %disp(['P_total_over_P: ', num2str(P_total_over_P)]);
-            %disp(['MFP: ', num2str(MFP)]);
-            break; % Döngüden çıkış
+            break; 
         end
 
         V = V_n; % Yeni hızın atanması
