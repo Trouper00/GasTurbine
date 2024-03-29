@@ -126,7 +126,7 @@ function [Fovermdot, S,h_0, f0, eta_P, eta_TH, rateofV9toa0, rateofV19toa0, Pt9o
         [cp_19, R_19, gama_19 , a_19,T_19,h_19] = FAIR_3(f_19, Pr_19);
         P0overP19=1;
     end
-    P19overP0=Pt19overP0/Pt19overP19;
+    P19overP0=1/P0overP19;
     P9overP0=1/P0overP9;
     T9overT0=T_9/T_0;
     T19overT0=T_19/T_0;
