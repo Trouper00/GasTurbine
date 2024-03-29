@@ -128,6 +128,7 @@ function [F,mdot_0,Fovermdot0,percentageNL,percentageNH,pi_c, S, f0, eta_P, alfa
     end
     [cp_9, R_9, gama_9, a_9,h_9,Pr_9] = FAIR_1(T_9, f_4_5);
     [M_4, T_total4_over_T4, P_total4_over_P4, MFP_4] = RGCOMPR(1, Tt4, f, M_4); 
+    %mdot_0_new=(mdot_0R*(1+fR)*P_0*(1+alfa)*pi_r*pi_d*pi_cL*pi_cH*MFP_4*sqrt(Tt4R/Tt4))/((1+f)*P_0R*(1+alfaR)*pi_rR*pi_dR*pi_cLR*pi_cHR*MFP_4R);
     mdot_0_new=(P_0*pi_r*pi_d*pi_cL*pi_cH)*(1+alfa)*mdot_0R*sqrt(Tt4R/Tt4)/(P_0R*(1+alfaR)*pi_rR*pi_dR*pi_cLR*pi_cHR);
     mdot_0_error=(mdot_0_new-mdot_0)/mdot_0R;
     if abs(mdot_0_error) > mdoterror_tol
