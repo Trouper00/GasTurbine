@@ -120,13 +120,12 @@ function [Fovermdot, S,h_0, f0, eta_P, eta_TH, rateofV9toa0, rateofV19toa0, Pt9o
     if Pt19overP0 >= Pt9overP9
         T_19=T_t19/Tt19overT19;
         [cp_19, R_19, gama_19 , a_19,h_19,Pr_19] = FAIR_1(T_19, f_19);
-        P0overP9=Pt9overP9/Pt9overP0;
+        P0overP19=Pt19overP19/Pt19overP0;
     else
         Pr_19=Pr_t19/(P_t19/P0);
         [cp_19, R_19, gama_19 , a_19,T_19,h_19] = FAIR_3(f_19, Pr_19);
-        P0overP9=1;
+        P0overP19=1;
     end
-    P0overP19=Pt19overP19/Pt19overP0;
     P19overP0=Pt19overP0/Pt19overP19;
     P9overP0=1/P0overP9;
     T9overT0=T_9/T_0;
