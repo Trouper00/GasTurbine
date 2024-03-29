@@ -117,7 +117,7 @@ function [Fovermdot, S,h_0, f0, eta_P, eta_TH, rateofV9toa0, rateofV19toa0, Pt9o
     M_19=1;
     [M_19, Tt19overT19, Pt19overP19, MFP_19] = RGCOMPR(1, T_t19, f_19, M_19);
     Pt19overP0=pi_r*pi_d*pi_f*pi_nf;
-    if Pt19overP0 >= Pt9overP9
+    if Pt19overP0 >= Pt19overP19
         T_19=T_t19/Tt19overT19;
         [cp_19, R_19, gama_19 , a_19,h_19,Pr_19] = FAIR_1(T_19, f_19);
         P0overP19=Pt19overP19/Pt19overP0;
